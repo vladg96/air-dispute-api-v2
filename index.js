@@ -52,6 +52,11 @@ app.get('/terms', (req, res) => {
     res.json(match);
 });
 
+// 5. Root route for health check
+app.get('/', (req, res) => {
+    res.status(200).json({ status: 'Air Dispute API is running' });
+});
+
 app.listen(port, () => {
     console.log(`Air Dispute API running on port ${port}`);
 });
