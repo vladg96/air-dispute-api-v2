@@ -28,7 +28,7 @@ app.get('/regulations/gaca', (req, res) => {
     const keyword = req.query.keyword?.toLowerCase();
     if (!keyword) return res.status(400).json({ error: 'Missing keyword' });
 
-    const match = gacaRegulations.find(r => r.keyword.toLowerCase() === keyword);
+    const match = gacaRegulations.find(r => r.keyword.toLowerCase().includes(keyword) || r.summary.toLowerCase().includes(keyword));
     if (!match) return res.status(404).json({ error: 'No matching GACA regulation found' });
 
     res.json(match);
