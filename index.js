@@ -13,7 +13,11 @@ app.get('/airline', (req, res) => {
     if (!flight) return res.status(400).json({ error: 'Missing flight query param (e.g. ?flight=SV108)' });
 
     const code = flight.match(/[a-zA-Z]+/)[0].toUpperCase();
-    const airline = [...saudiAirlines].find(a => a.iata === code);
+
+    // Merge both datasets
+    const allAirlines = [...saudiAirlines, ...globalTerms];
+
+    const airline = allAirlines.find(a => a.iata.toUpperCase() === code);
     if (!airline) return res.status(404).json({ error: 'Airline not found' });
 
     res.json(airline);
