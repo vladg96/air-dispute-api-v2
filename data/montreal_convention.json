@@ -1,14 +1,47 @@
 [
   {
-    "article": "19",
-    "text": "The carrier is liable for damage occasioned by delay in the carriage by air of passengers, baggage or cargo. Nevertheless, the carrier shall not be liable for damage occasioned by delay if it proves that it and its servants and agents took all measures that could reasonably be required to avoid the damage or that it was impossible for it or them to take such measures."
+    "keyword": "baggage lost",
+    "summary": "If checked baggage is lost, the airline is liable for damages up to 1,288 SDR. Baggage is considered lost if not delivered within 21 days.",
+    "article": "Article 17 \u2013 Liability for Lost Baggage"
   },
   {
-    "article": "22",
-    "text": "In the carriage of baggage and cargo, the liability of the carrier in the case of destruction, loss, damage or delay is limited to 1,131 Special Drawing Rights for each passenger unless a special declaration of interest in delivery at destination has been made."
+    "keyword": "baggage delayed",
+    "summary": "Airlines are liable for damages caused by delayed baggage unless they took all reasonable measures to prevent the delay.",
+    "article": "Article 19 \u2013 Liability for Baggage Delay"
   },
   {
-    "article": "17",
-    "text": "The carrier is liable for damage sustained in case of death or bodily injury of a passenger upon condition only that the accident which caused the damage so sustained took place on board the aircraft or in the course of any of the operations of embarking or disembarking."
+    "keyword": "baggage damaged",
+    "summary": "Airlines are liable for damage to checked baggage if the damage occurred while the baggage was in their care.",
+    "article": "Article 17 \u2013 Liability for Damaged Baggage"
+  },
+  {
+    "keyword": "flight delay",
+    "summary": "Airlines are liable for damage caused by flight delays if passengers suffer financial or consequential loss due to the delay.",
+    "article": "Article 19 \u2013 Liability for Passenger Delay"
+  },
+  {
+    "keyword": "death or injury",
+    "summary": "Airlines are liable for death or bodily injury of passengers during international flights unless they prove no negligence.",
+    "article": "Article 17 \u2013 Injury or Death of Passenger"
+  },
+  {
+    "keyword": "compensation limit",
+    "summary": "The limit of liability for delay, baggage, and injury is 1,288 SDR for baggage and 113,100 SDR for injury/death unless higher declared value is proven.",
+    "article": "Article 22 \u2013 Limits of Liability"
+  },
+  {
+    "keyword": "claims deadline",
+    "summary": "Passengers must submit a written complaint within 7 days for damaged baggage and 21 days for delay or loss.",
+    "article": "Article 31 \u2013 Time Limit on Baggage Claims"
+  },
+  {
+    "keyword": "lawsuit deadline",
+    "summary": "Any legal action for compensation must be brought within 2 years from the date of arrival or when the aircraft should have arrived.",
+    "article": "Article 35 \u2013 Limitation of Actions"
+  },
+  {
+    "keyword": "burden of proof",
+    "summary": "The passenger must prove the occurrence of delay or damage. The airline must prove it took all necessary measures to avoid the damage.",
+    "article": "Article 20 \u2013 Exoneration from Liability"
   }
 ]
