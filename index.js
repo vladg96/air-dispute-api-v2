@@ -49,7 +49,9 @@ app.get('/regulations/montreal', (req, res) => {
   const { article, keyword } = req.query;
 
   if (article) {
-    const rule = montrealConvention.find(r => r.article === article);
+    const rule = montrealConvention.find(r =>
+      r.article.toLowerCase().includes(article.toLowerCase())
+    );
     if (!rule) return res.status(404).json({ error: 'Article not found in Montreal Convention' });
     return res.json(rule);
   }
@@ -59,8 +61,9 @@ app.get('/regulations/montreal', (req, res) => {
 
     const matches = montrealConvention.filter(r =>
       keywords.some(kw =>
-        r.text.toLowerCase().includes(kw) ||
-        r.entitlement?.toLowerCase().includes(kw)
+        r.keyword?.toLowerCase().includes(kw) ||
+        r.summary?.toLowerCase().includes(kw) ||
+        r.article?.toLowerCase().includes(kw)
       )
     );
 
