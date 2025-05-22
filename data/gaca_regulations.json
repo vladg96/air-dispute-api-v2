@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "keyword": "baggage",
+    "summary": "Passengers are entitled to up to 1288 SDR compensation for lost or damaged baggage. For delayed baggage: 148 SDR on day 1 and 60 SDR/day after, up to 1288 SDR.",
+    "article": "GACA Baggage Compensation"
+  },
+  {
+    "keyword": "delay",
+    "summary": "Passengers receive 50 SDR for delays over 3 hours, and 150 SDR for delays over 6 hours. Care and support rights apply (food, accommodation).",
+    "article": "GACA Flight Delay Compensation"
+  },
+  {
+    "keyword": "cancellation",
+    "summary": "If flight is canceled, compensation depends on notice period. Ranges from 50% to 150% of the unused flight segment + full refund.",
+    "article": "GACA Flight Cancellation Compensation"
+  }
+]
