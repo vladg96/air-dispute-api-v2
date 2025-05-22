@@ -1,0 +1,8 @@
+[
+  { "name": "Saudia", "iata": "SV", "icao": "SVA", "country": "Saudi Arabia", "website": "https://www.saudia.com" },
+  { "name": "Flynas", "iata": "XY", "icao": "KNE", "country": "Saudi Arabia", "website": "https://www.flynas.com" },
+  { "name": "Flyadeal", "iata": "F3", "icao": "FAD", "country": "Saudi Arabia", "website": "https://www.flyadeal.com" },
+  { "name": "Nesma Airlines", "iata": "NA", "icao": "NMA", "country": "Saudi Arabia", "website": "https://www.nesmaairlines.com" },
+  { "name": "Sky Prime Aviation", "iata": "", "icao": "SPD", "country": "Saudi Arabia", "website": "https://skyprimeav.com" },
+  { "name": "SaudiGulf Airlines", "iata": "6S", "icao": "SGQ", "country": "Saudi Arabia", "website": "https://www.saudigulfairlines.com" }
+]

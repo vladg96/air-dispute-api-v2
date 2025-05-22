@@ -1,0 +1,11 @@
+[
+  { "name": "British Airways", "iata": "BA", "url": "https://www.ba.com/en-gb/information/legal/conditions-of-carriage" },
+  { "name": "Emirates", "iata": "EK", "url": "https://www.emirates.com/us/english/before-you-fly/travel/rules-and-notices/" },
+  { "name": "Qantas", "iata": "QF", "url": "https://www.qantas.com/us/en/book-a-trip/flights/conditions-of-carriage.html" },
+  { "name": "United Airlines", "iata": "UA", "url": "https://www.united.com/en/us/fly/contract-of-carriage.html" },
+  { "name": "American Airlines", "iata": "AA", "url": "https://www.aa.com/i18n/customer-service/support/conditions-of-carriage.jsp" },
+  { "name": "Cathay Pacific", "iata": "CX", "url": "https://www.cathaypacific.com/content/dam/cx/legal-and-privacy/general-conditions-of-carriage-for-passengers-baggage-en.pdf" },
+  { "name": "Air France", "iata": "AF", "url": "https://www.airfrance.com/CM/en/common/transverse/footer/edito_cgt1_airfrance.htm" },
+  { "name": "Lufthansa", "iata": "LH", "url": "https://www.lufthansa.com/content/dam/lh/documents/common/terms-and-conditions/terms-of-service/lufthansa-abb-03-2025-en.pdf" },
+  { "name": "Air Canada", "iata": "AC", "url": "https://www.aircanada.com/ca/en/aco/home/legal/conditions-carriage-tariffs.html" }
+]
