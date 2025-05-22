@@ -25,32 +25,53 @@ app.get('/airline', (req, res) => {
 
 // 2. Get GACA regulations
 app.get('/regulations/gaca', (req, res) => {
-    const keyword = req.query.keyword?.toLowerCase();
-    if (!keyword) return res.status(400).json({ error: 'Missing keyword' });
+  const rawKeyword = req.query.keyword;
+  if (!rawKeyword) return res.status(400).json({ error: 'Missing keyword' });
 
-    const match = gacaRegulations.find(r => r.keyword.toLowerCase().includes(keyword) || r.summary.toLowerCase().includes(keyword));
-    if (!match) return res.status(404).json({ error: 'No matching GACA regulation found' });
+  const keywords = rawKeyword.toLowerCase().split(',').map(k => k.trim());
 
-    res.json(match);
+  const matches = gacaRegulations.filter(r =>
+    keywords.some(kw =>
+      r.keyword.toLowerCase().includes(kw) ||
+      r.summary.toLowerCase().includes(kw)
+    )
+  );
+
+  if (matches.length === 0) {
+    return res.status(404).json({ error: 'No matching GACA regulation found' });
+  }
+
+  res.json(matches);
 });
 
 // 3. Get Montreal Convention rule
 app.get('/regulations/montreal', (req, res) => {
-    const { article, keyword } = req.query;
+  const { article, keyword } = req.query;
 
-    if (article) {
-        const rule = montrealConvention.find(r => r.article === article);
-        if (!rule) return res.status(404).json({ error: 'Article not found in Montreal Convention' });
-        return res.json(rule);
+  if (article) {
+    const rule = montrealConvention.find(r => r.article === article);
+    if (!rule) return res.status(404).json({ error: 'Article not found in Montreal Convention' });
+    return res.json(rule);
+  }
+
+  if (keyword) {
+    const keywords = keyword.toLowerCase().split(',').map(k => k.trim());
+
+    const matches = montrealConvention.filter(r =>
+      keywords.some(kw =>
+        r.text.toLowerCase().includes(kw) ||
+        r.entitlement?.toLowerCase().includes(kw)
+      )
+    );
+
+    if (matches.length === 0) {
+      return res.status(404).json({ error: 'Keyword not found in Montreal Convention' });
     }
 
-    if (keyword) {
-        const match = montrealConvention.find(r => r.text.toLowerCase().includes(keyword.toLowerCase()));
-        if (!match) return res.status(404).json({ error: 'Keyword not found in Montreal Convention' });
-        return res.json(match);
-    }
+    return res.json(matches);
+  }
 
-    res.status(400).json({ error: 'Provide either article or keyword query param' });
+  res.status(400).json({ error: 'Provide either article or keyword query param' });
 });
 
 // 4. Fetch airline terms
