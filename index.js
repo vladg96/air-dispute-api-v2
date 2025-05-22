@@ -32,13 +32,21 @@ app.get('/regulations/gaca', (req, res) => {
 
 // 3. Get Montreal Convention rule
 app.get('/regulations/montreal', (req, res) => {
-    const article = req.query.article;
-    if (!article) return res.status(400).json({ error: 'Missing article' });
+    const { article, keyword } = req.query;
 
-    const rule = montrealConvention.find(r => r.article === article);
-    if (!rule) return res.status(404).json({ error: 'Article not found in Montreal Convention' });
+    if (article) {
+        const rule = montrealConvention.find(r => r.article === article);
+        if (!rule) return res.status(404).json({ error: 'Article not found in Montreal Convention' });
+        return res.json(rule);
+    }
 
-    res.json(rule);
+    if (keyword) {
+        const match = montrealConvention.find(r => r.text.toLowerCase().includes(keyword.toLowerCase()));
+        if (!match) return res.status(404).json({ error: 'Keyword not found in Montreal Convention' });
+        return res.json(match);
+    }
+
+    res.status(400).json({ error: 'Provide either article or keyword query param' });
 });
 
 // 4. Fetch airline terms
