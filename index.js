@@ -82,7 +82,9 @@ app.get('/terms', (req, res) => {
     const airline = req.query.airline?.toLowerCase();
     if (!airline) return res.status(400).json({ error: 'Missing airline name' });
 
-    const match = globalTerms.find(a => a.name.toLowerCase() === airline);
+    //Merge both airlines
+    const allOfThem = [...saudiAirlines, ...globalTerms];
+    const match = allOfThem.find(a => a.name.toLowerCase() === airline);
     if (!match) return res.status(404).json({ error: 'Airline not found or terms not available' });
 
     res.json(match);
